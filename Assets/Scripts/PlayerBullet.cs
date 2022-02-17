@@ -9,7 +9,7 @@ public class PlayerBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.up * bulletSpeed;
+        rb.velocity = transform.right * bulletSpeed;
         Destroy(gameObject, 2);
     }
 
