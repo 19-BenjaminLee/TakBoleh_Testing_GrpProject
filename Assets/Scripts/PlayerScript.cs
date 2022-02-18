@@ -28,10 +28,9 @@ public class PlayerScript : MonoBehaviour
 
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -8f, 8f), transform.position.y);
 
-
+        // Left click to shoot //
         if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            //Debug.Log("Pew pew");
+        {          
             Instantiate(PlayerBullet, FirePoint.position, FirePoint.rotation);
         }
     }
