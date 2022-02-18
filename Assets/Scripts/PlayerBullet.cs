@@ -6,6 +6,8 @@ public class PlayerBullet : MonoBehaviour
 {
     public float bulletSpeed;
     public Rigidbody2D rb;
+
+    public GameObject Explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +19,17 @@ public class PlayerBullet : MonoBehaviour
     void Update()
     {
         
+    }
+
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Destroy(gameObject);
+            Destroy(collision.gameObject);           
+        }
     }
 }
