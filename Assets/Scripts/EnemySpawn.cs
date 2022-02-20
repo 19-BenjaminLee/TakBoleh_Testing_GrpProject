@@ -25,7 +25,7 @@ public class EnemySpawn : MonoBehaviour
         if (timer <= 0)
         {
             float spawnX = Random.Range(8, -8);
-            float spawnY = 4.52f;
+            float spawnY = 4.2f;
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
             Instantiate(Enemy, spawnPosition, Quaternion.identity);
