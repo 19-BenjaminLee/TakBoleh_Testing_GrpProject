@@ -29,7 +29,7 @@ public class PlayerBullet : MonoBehaviour
         {
             Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(gameObject);
-            Destroy(collision.gameObject);           
+            Destroy(collision.gameObject);
         }
     }
 }

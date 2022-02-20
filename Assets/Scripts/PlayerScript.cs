@@ -9,14 +9,13 @@ public class PlayerScript : MonoBehaviour
 
     private float XPosition;
 
-
     // Shooting
     public GameObject PlayerBullet;
     public Transform FirePoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -30,7 +29,7 @@ public class PlayerScript : MonoBehaviour
 
         // Left click to shoot //
         if (Input.GetKeyUp(KeyCode.Mouse0))
-        {          
+        {
             Instantiate(PlayerBullet, FirePoint.position, FirePoint.rotation);
         }
     }
