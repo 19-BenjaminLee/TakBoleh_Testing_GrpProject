@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
 
     
 

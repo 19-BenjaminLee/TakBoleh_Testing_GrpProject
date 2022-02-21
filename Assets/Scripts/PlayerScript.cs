@@ -14,8 +14,10 @@ public class PlayerScript : MonoBehaviour
     public Text scoreTxt;
     public static int Score;
 
-    public Text timerTxt;
-    float timer = 30;
+    // Health //
+    public Text healthTxt;
+    public static int Health = 3;
+    
 
     // Shooting
     public GameObject PlayerBullet;
@@ -32,6 +34,8 @@ public class PlayerScript : MonoBehaviour
     {
         scoreTxt.text = "Score: " + Score.ToString();
 
+        healthTxt.text = "Health X " + Health.ToString();
+
         float horizontalInput = Input.GetAxis("Horizontal");
 
         transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
@@ -44,14 +48,10 @@ public class PlayerScript : MonoBehaviour
             Instantiate(PlayerBullet, FirePoint.position, FirePoint.rotation);
         }
 
-        // game lose condition //
-        timerTxt.text = "Timer: " + timer.ToString("0");
-        timer -= Time.deltaTime;
-        if(timer <= 0)
-        {
-            SceneManager.LoadScene("GameOverScene");
-        }
+        
         // game win condition //
 
     }
+
+    
 }
