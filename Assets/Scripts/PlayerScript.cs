@@ -38,12 +38,14 @@ public class PlayerScript : MonoBehaviour
             Instantiate(PlayerBullet, FirePoint.position, FirePoint.rotation);
         }
 
-        // Timer countdown for game //
+        // game lose condition //
         timerTxt.text = "Timer: " + timer.ToString("0");
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
             SceneManager.LoadScene("GameOverScene");
         }
+        // game win condition //
+
     }
 }

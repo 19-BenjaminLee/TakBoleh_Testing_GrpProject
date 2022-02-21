@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject[] enemyPrefab;
     private float timer = 1f;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class EnemySpawn : MonoBehaviour
             float spawnY = 4.2f;
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-            Instantiate(Enemy, spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab[Random.Range(0, 3)], spawnPosition, Quaternion.identity);
             timer = 1f;
         }
     }

@@ -8,6 +8,9 @@ public class PlayerBullet : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject Explosion;
+    public GameObject Coin;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class PlayerBullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Instantiate(Coin, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
