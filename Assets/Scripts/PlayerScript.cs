@@ -10,6 +10,10 @@ public class PlayerScript : MonoBehaviour
 
     private float XPosition;
 
+    // Score //
+    public Text scoreTxt;
+    public static int Score;
+
     public Text timerTxt;
     float timer = 30;
 
@@ -20,12 +24,14 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        scoreTxt.text = "Score: " + Score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        scoreTxt.text = "Score: " + Score.ToString();
+
         float horizontalInput = Input.GetAxis("Horizontal");
 
         transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
