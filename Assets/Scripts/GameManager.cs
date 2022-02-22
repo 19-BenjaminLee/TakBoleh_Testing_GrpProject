@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
         }
 
 
+        
+
+
         if (PlayerScript.Health <= 0)
         {
             SceneManager.LoadScene("GameOverScene");
