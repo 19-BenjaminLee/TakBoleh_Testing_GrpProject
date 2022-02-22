@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            SceneManager.LoadScene("GameWinScene");
+        }
+
+
+        if (PlayerScript.Health <= 0)
+        {
             SceneManager.LoadScene("GameOverScene");
         }
     }

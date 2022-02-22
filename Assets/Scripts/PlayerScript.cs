@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
 
         transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
 
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -8f, 8f), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -5f, 5f), transform.position.y);
 
         // Left click to shoot //
         if (Input.GetKeyUp(KeyCode.Mouse0))

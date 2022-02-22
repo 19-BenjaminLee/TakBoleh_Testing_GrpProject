@@ -11,8 +11,16 @@ public class MovingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.up * -Speed;
-        Destroy(gameObject, 3);
+        if (gameObject.tag == "Enemy")
+        {
+            rb.velocity = transform.up * -Speed;
+            Destroy(gameObject, 3);
+        }
+        else
+        {
+            rb.velocity = transform.right * Speed;
+            Destroy(gameObject, 3);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

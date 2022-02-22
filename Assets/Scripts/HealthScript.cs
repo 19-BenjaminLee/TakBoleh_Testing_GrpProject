@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : MonoBehaviour
+public class HealthScript : MonoBehaviour
 {
     private Transform target;
-
-    
 
     public float speed;
 
@@ -28,11 +26,9 @@ public class CoinScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            PlayerScript.Score += 10;
+            PlayerScript.Health += 1;
             //PlayerScript.scoreTxt.text = "Score: " + PlayerScript.Score;
         }
-
-
 
     }
 }
