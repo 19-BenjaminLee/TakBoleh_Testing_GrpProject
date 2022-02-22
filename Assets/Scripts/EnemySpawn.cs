@@ -28,7 +28,7 @@ public class EnemySpawn : MonoBehaviour
             float spawnY = 4.2f;
 
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-            Instantiate(enemyPrefab[Random.Range(0, 5)], spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab[Random.Range(0, 10)], spawnPosition, Quaternion.identity);
             timer = 1.5f;
         }
     

@@ -8,6 +8,7 @@ TagManager:
   - EnemyBullet
   - Score
   - Health
+  - PowerUp
   layers:
   - Default
   - TransparentFX

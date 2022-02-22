@@ -25,12 +25,9 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            SceneManager.LoadScene("GameWinScene");
+            SceneManager.LoadScene("Level2");
         }
-
-
-        
-
+       
 
         if (PlayerScript.Health <= 0)
         {

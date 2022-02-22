@@ -10,6 +10,8 @@ public class PlayerBullet : MonoBehaviour
     public GameObject Explosion;
     public GameObject Coin;
 
+    public GameObject PowerUp;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,14 @@ public class PlayerBullet : MonoBehaviour
         {
             Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Instantiate(Coin, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "PowerUpShip")
+        {
+            Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Instantiate(PowerUp, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
