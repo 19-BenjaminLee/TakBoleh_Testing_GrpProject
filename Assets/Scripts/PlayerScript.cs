@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     // Score //
     public Text scoreTxt;
     public static int Score;
+   
 
     // Health //
     public Text healthTxt;
@@ -42,6 +43,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         scoreTxt.text = "Score: " + Score.ToString();
 
         healthTxt.text = "Health X " + Health.ToString();

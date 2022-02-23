@@ -9,6 +9,7 @@ TagManager:
   - Score
   - Health
   - PowerUp
+  - Boss
   layers:
   - Default
   - TransparentFX
