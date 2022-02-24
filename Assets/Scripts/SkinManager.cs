@@ -39,4 +39,11 @@ public class SkinManager : MonoBehaviour
         PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
         SceneManager.LoadScene("Level1");
     }
+
+    public void PlayEndless()
+    {
+        PlayerScript.Score = 0;
+        PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
+        SceneManager.LoadScene("Level4");
+    }
 }

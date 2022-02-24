@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         {
             if (BossScript.Health <= 0)
             {
-                SceneManager.LoadScene("Level4");
+                SceneManager.LoadScene("GameWinScene");
             }
 
         }
