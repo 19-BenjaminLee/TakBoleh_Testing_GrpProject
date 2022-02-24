@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     // Timer //
     public Text timerTxt;
     float timer = 30;
@@ -20,6 +20,24 @@ public class GameManager : MonoBehaviour
         CurrentScene = SceneManager.GetActiveScene();
         Debug.Log(CurrentScene.name);
         Debug.Log(PlayerPrefs.GetInt("Level1Score"));
+
+        // Score Bring over for Replay //
+        if (CurrentScene.name == "Level1")
+        {
+            PlayerPrefs.SetInt("PreviousScore", 0);
+            PlayerScript.Score = 0;
+        }
+
+        if (CurrentScene.name == "Level2" || CurrentScene.name == "Level3")
+        {
+            PlayerPrefs.SetInt("PreviousScore", PlayerScript.Score);
+        }
+
+        // Health Start for each Level//
+        if (CurrentScene.name == "Level1" || CurrentScene.name == "Level2" || CurrentScene.name == "Level4")
+        {
+            PlayerScript.Health = 3;
+        }
 
         if (CurrentScene.name == "Level3")
         {
@@ -35,16 +53,15 @@ public class GameManager : MonoBehaviour
         // Game Lose / Win Condition Level 1 //
         if (CurrentScene.name == "Level1")
         {
+            timerTxt.text = "Timer: " + timer.ToString("0");
+            timer -= Time.deltaTime;
 
-        timerTxt.text = "Timer: " + timer.ToString("0");
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
-        {
+            if (timer <= 0)
+            {
                 PlayerPrefs.SetInt("Level1Score", PlayerScript.Score);
-            SceneManager.LoadScene("Level2");
+                SceneManager.LoadScene("Level2");
 
-        }
+            }
 
         }
 
@@ -52,7 +69,7 @@ public class GameManager : MonoBehaviour
         if (CurrentScene.name == "Level2")
         {
 
-            if(PlayerScript.Score == PlayerPrefs.GetInt("Level1Score") + 200)
+            if (PlayerScript.Score == PlayerPrefs.GetInt("Level1Score") + 200)
             {
                 PlayerPrefs.SetInt("Level1Score", 0);
                 SceneManager.LoadScene("Level3");
@@ -63,24 +80,42 @@ public class GameManager : MonoBehaviour
         // Game Win Condition Level 3 //
         if (CurrentScene.name == "Level3")
         {
-            if(BossScript.Health <= 0)
+            if (BossScript.Health <= 0)
             {
                 SceneManager.LoadScene("Level4");
             }
 
         }
 
-        if(CurrentScene.name == "Level4")
+        if (CurrentScene.name == "Level4")
         {
-            if(PlayerPrefs.GetInt("HighScore")<= PlayerScript.Score)
+            if (PlayerPrefs.GetInt("HighScore") <= PlayerScript.Score)
             {
                 PlayerPrefs.SetInt("HighScore", PlayerScript.Score);
             }
         }
 
-            if(PlayerScript.Health <= 0)
+        if (PlayerScript.Health <= 0 && CurrentScene.name != "Level4")
+        {
+            if (CurrentScene.name == "Level1")
             {
-                SceneManager.LoadScene("GameOverScene");
+                PlayerPrefs.SetInt("CurrentLevel", 1);
             }
+            if (CurrentScene.name == "Level2")
+            {
+                PlayerPrefs.SetInt("CurrentLevel", 2);
+            }
+            if (CurrentScene.name == "Level3")
+            {
+                PlayerPrefs.SetInt("CurrentLevel", 3);
+            }
+            SceneManager.LoadScene("GameOverScene");
+        }
+        if (PlayerScript.Health <= 0 && CurrentScene.name == "Level4")
+        {
+            SceneManager.LoadScene("GameWinScene");
+        }
+
     }
 }
+

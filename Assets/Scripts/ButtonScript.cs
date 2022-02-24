@@ -16,7 +16,17 @@ public class ButtonScript : MonoBehaviour
 
     public void Replay()
     {
+
+        PlayerScript.Score = PlayerPrefs.GetInt("PreviousScore");
+
+        if (PlayerPrefs.GetInt("CurrentLevel") == 1)
         SceneManager.LoadScene("Level1");
+        if (PlayerPrefs.GetInt("CurrentLevel") == 2)
+            SceneManager.LoadScene("Level2");
+        if (PlayerPrefs.GetInt("CurrentLevel") == 3)
+            SceneManager.LoadScene("Level3");
+        if (PlayerPrefs.GetInt("CurrentLevel") == 4)
+            SceneManager.LoadScene("Level1");
     }
 
     public void ClearHighscore()
