@@ -315,7 +315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Objective:  Kill  the  Reaper'
+  m_Text: 'Objective:  Kill  DA  Reaper'
 --- !u!222 &216114739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ RectTransform:
   - {fileID: 785673810}
   - {fileID: 2083979684}
   m_Father: {fileID: 699155369}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 9109974582950779434, guid: e29631f3bd2a0ff4abf64daa15617c38, type: 3}
+  - {fileID: 1848535450460645986, guid: c1c22b6e8f7c2b44cbfb734c12af6c2c, type: 3}
   - {fileID: 1848535450460645986, guid: c1c22b6e8f7c2b44cbfb734c12af6c2c, type: 3}
   - {fileID: 1848535450460645986, guid: c1c22b6e8f7c2b44cbfb734c12af6c2c, type: 3}
   - {fileID: 1848535450460645986, guid: c1c22b6e8f7c2b44cbfb734c12af6c2c, type: 3}
@@ -770,9 +770,9 @@ RectTransform:
   - {fileID: 1218194440}
   - {fileID: 1163374593}
   - {fileID: 1630898390}
+  - {fileID: 245354757}
   - {fileID: 1003821477}
   - {fileID: 1487019321}
-  - {fileID: 245354757}
   - {fileID: 216114737}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -932,11 +932,11 @@ RectTransform:
   m_LocalScale: {x: 1.0919021, y: 0.6882698, z: 0.63295}
   m_Children: []
   m_Father: {fileID: 699155369}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.76201, y: 377.653}
+  m_AnchoredPosition: {x: 2.76201, y: 413}
   m_SizeDelta: {x: 311.9157, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003821478
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.08282871, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -971,7 +971,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REAPER BOSS Health
+  m_Text: DA    Reaper
 --- !u!222 &1003821479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Health X 3
+  m_Text: Health X 1
 --- !u!222 &1163374595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1406,6 +1406,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218194439}
   m_CullTransparentMesh: 0
+--- !u!4 &1403298049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3919704877030422346, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+    type: 3}
+  m_PrefabInstance: {fileID: 8050916303071117112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1456369491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,11 +1523,11 @@ RectTransform:
   m_LocalScale: {x: 1.0919021, y: 0.6882698, z: 0.63295}
   m_Children: []
   m_Father: {fileID: 699155369}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.76201, y: 360.6527}
+  m_AnchoredPosition: {x: 2.76201, y: 379}
   m_SizeDelta: {x: 311.9157, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487019322
@@ -1599,8 +1605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319.4, y: 196}
-  m_SizeDelta: {x: 113.64, y: 30}
+  m_AnchoredPosition: {x: 319.4, y: 186}
+  m_SizeDelta: {x: 113.64, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1630898391
 MonoBehaviour:
@@ -1634,7 +1640,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3
+  m_Text: 'Level 3
+
+    (Boss)'
 --- !u!222 &1630898392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1875,6 +1883,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6176405696876334083, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 4905673823105103254, guid: 0cd91c0fe446a5144bd6ce3393749bd6,
+        type: 3}
+    - target: {fileID: 6176405696876334083, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+        type: 3}
+      propertyPath: enemyFirePoint
+      value: 
+      objectReference: {fileID: 1403298049}
+    - target: {fileID: 6176405696876334083, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+        type: 3}
+      propertyPath: timeBtwShots
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050916302591730712, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+        type: 3}
+      propertyPath: timeBtwShots
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8050916302591730722, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
         type: 3}
       propertyPath: m_Name
@@ -1888,7 +1917,7 @@ PrefabInstance:
     - target: {fileID: 8050916302591730724, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.76
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 8050916302591730724, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
         type: 3}
@@ -1945,5 +1974,10 @@ PrefabInstance:
       propertyPath: HealthTxt
       value: 
       objectReference: {fileID: 1487019322}
+    - target: {fileID: 8050916302591730727, guid: cefe946a1a4f7a8468bd8e6fd8cce586,
+        type: 3}
+      propertyPath: timeBtwShots
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cefe946a1a4f7a8468bd8e6fd8cce586, type: 3}

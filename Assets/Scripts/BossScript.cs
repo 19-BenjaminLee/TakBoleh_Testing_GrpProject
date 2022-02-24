@@ -32,13 +32,13 @@ public class BossScript : MonoBehaviour
         HealthTxt.text = Health + " / " + MaxHealth;
         HealthBar.value = Health;
         currentPosition = transform.position.x;
-        Limit = 5f;
+        Limit = 4f;
 
         if (currentPosition < Limit && LimitReached)
         {
             transform.Translate(Vector2.right * Time.deltaTime * speed);
         }
-        else if (currentPosition > -5f && !LimitReached)
+        else if (currentPosition > -4f && !LimitReached)
         {
             transform.Translate(Vector2.left * Time.deltaTime * speed);
         }

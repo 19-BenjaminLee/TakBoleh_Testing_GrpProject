@@ -49,7 +49,7 @@ public class PlayerBullet : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("Boss"))
         {
-            Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Instantiate(Coin, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             BossScript.Health = BossScript.Health - 1;
             Destroy(gameObject);
