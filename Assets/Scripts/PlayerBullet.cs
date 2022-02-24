@@ -12,6 +12,8 @@ public class PlayerBullet : MonoBehaviour
 
     public GameObject PowerUp;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,17 @@ public class PlayerBullet : MonoBehaviour
             Instantiate(PowerUp, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(gameObject);
             Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("Boss"))
+        {
+            Instantiate(Explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Instantiate(Coin, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            BossScript.Health = BossScript.Health - 1;
+            Destroy(gameObject);
+            if (BossScript.Health == 0)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

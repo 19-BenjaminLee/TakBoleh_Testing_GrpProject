@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 352280134}
   - component: {fileID: 352280133}
   - component: {fileID: 352280132}
+  - component: {fileID: 352280135}
   m_Layer: 5
   m_Name: btnMenu
   m_TagString: Untagged
@@ -434,8 +435,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 352280135}
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -482,6 +483,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352280130}
   m_CullTransparentMesh: 0
+--- !u!114 &352280135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352280130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67376a3a8e8ab6d408713c5a107d80a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &529851915
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +507,7 @@ GameObject:
   - component: {fileID: 529851919}
   - component: {fileID: 529851918}
   - component: {fileID: 529851917}
+  - component: {fileID: 529851920}
   m_Layer: 5
   m_Name: btnReplay
   m_TagString: Untagged
@@ -564,8 +578,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 529851920}
+        m_MethodName: Replay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,6 +626,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529851915}
   m_CullTransparentMesh: 0
+--- !u!114 &529851920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529851915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67376a3a8e8ab6d408713c5a107d80a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &562475616
 GameObject:
   m_ObjectHideFlags: 0

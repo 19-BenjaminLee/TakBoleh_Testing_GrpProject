@@ -46,16 +46,9 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (PlayerScript.Health <= 0)
-        {
-
-            SceneManager.LoadScene("GameOverScene");
-
         }
 
-        }
-
-        // Game Lose / Win Condition Level 2 //
+        // Game Win Condition Level 2 //
         if (CurrentScene.name == "Level2")
         {
 
@@ -65,21 +58,29 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("Level3");
             }
 
-            if(PlayerScript.Health <= 0)
-            {
-                SceneManager.LoadScene("GameOverScene");
-            }
         }
 
-        // Game Lose / Win Condition Level 3 //
+        // Game Win Condition Level 3 //
         if (CurrentScene.name == "Level3")
         {
-            
+            if(BossScript.Health <= 0)
+            {
+                SceneManager.LoadScene("Level4");
+            }
+
+        }
+
+        if(CurrentScene.name == "Level4")
+        {
+            if(PlayerPrefs.GetInt("HighScore")<= PlayerScript.Score)
+            {
+                PlayerPrefs.SetInt("HighScore", PlayerScript.Score);
+            }
+        }
+
             if(PlayerScript.Health <= 0)
             {
                 SceneManager.LoadScene("GameOverScene");
             }
-
-        }
     }
 }
