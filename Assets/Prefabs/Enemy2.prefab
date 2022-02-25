@@ -147,6 +147,8 @@ MonoBehaviour:
   rb: {fileID: 1373295299}
   Explosion: {fileID: 6417972062900137580, guid: caaf34d5ee83f574989d81f3fc112909,
     type: 3}
+  PlayerExplosion: {fileID: 4264130954108027921, guid: de32a18e9d8b843488e75dc0267d928a,
+    type: 3}
 --- !u!50 &1373295299
 Rigidbody2D:
   serializedVersion: 4

@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     float timer = 30;
     Scene CurrentScene;
 
+    // Death conditions
+    private bool isDead = false;
+    //public GameObject PlayerExplosion;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +100,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Lose condition //
+
         if (PlayerScript.Health <= 0 && CurrentScene.name != "Level4")
         {
             if (CurrentScene.name == "Level1")
@@ -110,6 +117,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("CurrentLevel", 3);
             }
             SceneManager.LoadScene("GameOverScene");
+           
         }
         if (PlayerScript.Health <= 0 && CurrentScene.name == "Level4")
         {
@@ -117,5 +125,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+
 }
 

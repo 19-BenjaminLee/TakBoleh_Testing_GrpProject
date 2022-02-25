@@ -67,7 +67,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PowerUp")
+        if (collision.gameObject.tag == "PowerUp" && HasPowerUp == false)
         {
             StartCoroutine(PowerUpPickUp(collision));
             Destroy(collision.gameObject);

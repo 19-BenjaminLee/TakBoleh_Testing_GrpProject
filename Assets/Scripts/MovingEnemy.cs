@@ -8,6 +8,7 @@ public class MovingEnemy : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject Explosion;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +32,6 @@ public class MovingEnemy : MonoBehaviour
             Instantiate(Explosion, transform.position, transform.rotation);
             PlayerScript.Health -= 1;
         }
+        
     }
 }
