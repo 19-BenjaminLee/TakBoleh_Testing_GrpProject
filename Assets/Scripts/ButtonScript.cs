@@ -33,4 +33,24 @@ public class ButtonScript : MonoBehaviour
     {
         PlayerPrefs.SetInt("HighScore", 0);
     }
+
+    public void Tummy()
+    {
+        Application.OpenURL("https://opengameart.org/users/tummyache");
+    }
+
+    public void Scientist()
+    {
+        Application.OpenURL("https://opengameart.org/users/thescientist");
+    }
+
+    public void GameTheme()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=p8moocGzQJ4&t=2s");
+    }
+
+    public void BossTheme()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=9--lKyEphWY");
+    }
 }
