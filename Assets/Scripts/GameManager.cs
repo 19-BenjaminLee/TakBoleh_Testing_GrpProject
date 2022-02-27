@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 
             if (PlayerScript.Score == PlayerPrefs.GetInt("Level1Score") + 200)
             {
+                Debug.Log("go to lvl 3");
                 PlayerPrefs.SetInt("Level1Score", 0);
                 SceneManager.LoadScene("Level3");
             }

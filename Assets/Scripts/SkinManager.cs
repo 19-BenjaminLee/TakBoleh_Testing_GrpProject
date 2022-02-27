@@ -4,46 +4,76 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
+//#if UNITY_EDITOR
 public class SkinManager : MonoBehaviour
 {
-    public SpriteRenderer sr;
-    public List<Sprite> skins = new List<Sprite>();
-    private int selectedSkin = 0;
+    //public SpriteRenderer sr;
+    //public List<Sprite> skins = new List<Sprite>();
+    //private int selectedSkin = 0;
 
-    public GameObject playerskin;
+    //public GameObject playerskin;
+
+    public GameObject[] characters;
+    public int selectedCharacter = 0;
+
 
     public void NextOption()
     {
-        selectedSkin = selectedSkin + 1;
-        if (selectedSkin == skins.Count)
-        {
-            selectedSkin = 0;
-        }
-        sr.sprite = skins[selectedSkin];
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        characters[selectedCharacter].SetActive(true);
+
+        //selectedSkin = selectedSkin + 1;
+        //if (selectedSkin == skins.Count)
+        //{
+        //    selectedSkin = 0;
+        //}
+        //PlayerPrefs.SetInt("skinIndex", selectedSkin);
+        //sr.sprite = skins[selectedSkin];
+
+
     }
 
 
     public void BackOption()
     {
-        selectedSkin = selectedSkin - 1;
-        if (selectedSkin < 0)
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter--;
+        if (selectedCharacter < 0)
         {
-            selectedSkin = skins.Count - 1;
+            selectedCharacter += characters.Length;
         }
-        sr.sprite = skins[selectedSkin];
+        characters[selectedCharacter].SetActive(true);
+
+        //selectedSkin = selectedSkin - 1;
+        //if (selectedSkin < 0)
+        //{
+        //    selectedSkin = skins.Count - 1;
+        //}
+        //PlayerPrefs.SetInt("skinIndex", selectedSkin);
+        //sr.sprite = skins[selectedSkin];
     }
+
 
 
     public void PlayGame()
     {
-        PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+
+        //PlayerPrefs.SetInt("skinIndex", selectedSkin);
+        ////PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
         SceneManager.LoadScene("Level1");
     }
 
     public void PlayEndless()
     {
-        PlayerScript.Score = 0;
-        PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+
+        //PlayerPrefs.SetInt("skinIndex", selectedSkin);
+        //PlayerScript.Score = 0;
+        ////PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Prefabs/selectedskin.prefab");
         SceneManager.LoadScene("Level4");
     }
 }
+
+//#endif
