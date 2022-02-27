@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
             PlayerScript.Health = 1;
         }
 
+        if (CurrentScene.name == "Level4")
+        {
+            PlayerScript.Score = 0;
+        }
+
     }
 
     // Update is called once per frame
@@ -74,7 +79,7 @@ public class GameManager : MonoBehaviour
         if (CurrentScene.name == "Level2")
         {
 
-            if (PlayerScript.Score == PlayerPrefs.GetInt("Level1Score") + 200)
+            if (PlayerScript.Score >= PlayerPrefs.GetInt("Level1Score") + 200)
             {
                 Debug.Log("go to lvl 3");
                 PlayerPrefs.SetInt("Level1Score", 0);
