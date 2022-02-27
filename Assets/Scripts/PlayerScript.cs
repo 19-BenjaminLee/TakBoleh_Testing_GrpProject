@@ -32,12 +32,17 @@ public class PlayerScript : MonoBehaviour
     public Transform Power2;
 
     public GameObject PowerUpShip;
+
+    // Audio clips
+    public AudioClip[] AudioClipArr;
+    private AudioSource audiosource;
     
 
     // Start is called before the first frame update
     void Start()
     {
         scoreTxt.text = "Score: " + Score.ToString();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,6 +78,20 @@ public class PlayerScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
         
+        if (collision.gameObject.tag == "Score")
+        {
+            audiosource.PlayOneShot(AudioClipArr[0]);
+        }
+
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            audiosource.PlayOneShot(AudioClipArr[1]);
+        }
+
+        if (collision.gameObject.tag == "Health")
+        {
+            audiosource.PlayOneShot(AudioClipArr[2]);
+        }
     }
 
 

@@ -4949,6 +4949,10 @@ MonoBehaviour:
   Power2: {fileID: 1290869378}
   PowerUpShip: {fileID: 7351831775771678124, guid: 37afa39eab05e1c48b81342d39967219,
     type: 3}
+  AudioClipArr:
+  - {fileID: 8300000, guid: 044d68abd37ce1248a5a0fd674166b86, type: 3}
+  - {fileID: 8300000, guid: c5bc76d574fdb274fa88138dba3c08f4, type: 3}
+  - {fileID: 8300000, guid: 28f551abf35e4c54fa0681762ef82dc8, type: 3}
 --- !u!1 &4218236532730874458
 GameObject:
   m_ObjectHideFlags: 0
